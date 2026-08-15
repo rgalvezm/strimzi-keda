@@ -1,0 +1,15 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: scaling-demo
+  namespace: kafka
+  labels:
+    strimzi.io/cluster: edu-cluster
+
+spec:
+  partitions: 6
+  replicas: 1
+
+  config:
+    retention.ms: 3600000
+    cleanup.policy: delete
